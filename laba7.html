@@ -1,0 +1,170 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        
+        <title>Home|Life in music</title>
+        <meta charset="utf-8";name="Kristina Tripak">
+        <link rel="shortcut icon" href="img/romashka.png" type="image/png">
+        <link rel="stylesheet" href="styles.css">
+        <style>
+        
+            @font-face { font-family: madelikesscript; src: url('madelikesscript.ttf'); }  
+            p {
+                font-family: madelikesscript;
+                color:#817358;
+            }
+            button{
+                font-family: madelikesscript;
+                background-color:#d11111;
+                height:40px;
+                width:100px;
+                color: #aaaaaa
+            }
+            img {
+				border-radius: 30px; 
+				text-align: center;
+				width: 8%;
+			}
+
+			.ml-img {
+				margin-left: 1%;
+			}
+        </style>
+    </head>
+    <body>
+        <div class="a-center">
+			<h1>Life in music</h1>
+        </div>
+		<div>
+            <a class="btn" href="home_page.html">HOME</a>
+			<a class="btn" href="bio.html">BIO</a>
+			<a class="btn" href="music.html">MUSIC</a>
+			<a class="btn" href="videos.html">VIDEOS</a>
+        </div>
+        
+        <div id = "text">
+            <p>If you want to get our song to your gmail, click on the button below</p>
+        </div>
+        <div class="format">
+            <button id="button" onclick="AlertMessage()">
+                Click me!
+            </button>
+        </div>
+        <script>
+            function AlertMessage() 
+            {
+                alert("You will receive this song to your emai");
+            };
+            button.onclick = AlertMessage
+        </script>
+
+        <div class="header-strip"></div>
+		<div id="menu">
+			<button data-action="addsinger">Add new singer</button>
+			<button data-action="searchbiography" data-searchbiography>Search for bio</button>
+			<button data-action="loadvideo">Upload an video</button>
+			<button data-action="deletemusic">Delete music</button>
+            
+			<button data-action="addsinger">Add new singer</button>
+			<button data-action="searchbiography" data-searchbiography>Search for bio</button>
+			<button data-action="loadvideo">Upload an video</button>
+			<button data-action="deletemusic">Delete music</button>
+		</div>
+
+        <script>
+            class Menu
+            {
+                constructor(elem) {
+                    this._elem = elem;
+                    elem.onclick = this.onClick.bind(this);
+                }
+                
+                addsinger() {
+                    alert('Adding singer Antitela');
+                }
+                
+                loadvideo() {
+                    alert('Uploading this video');
+                }
+                
+                searchbiography() {
+                    alert('I am looking for biography, wait a moment');
+                }
+
+                deletemusic() {
+                    alert('Deleting music');
+                }
+
+                onClick(event) {
+                    let action = event.target.dataset.action;
+                    if (action) this[action]();
+                };
+                    
+            }
+            new Menu(menu);
+
+            document.addEventListener('click',
+                function(event) 
+                {
+                    if (event.target.dataset.searchbiography != undefined) 
+                    {
+                        window.location.href = 'bio.html';
+                    } 
+                });
+        </script>
+
+        <div id = "text">
+            <p>Please our other <i>pages</i>, their <i>hyperlinks</i> you can find above</p>
+        </div>
+
+        <div id = "forTextContent">
+            <p>Thank you for watching me, click on it and receive news</p>
+        </div>
+
+        <div class="format">
+			<img src="img/romashka.png" class="ml-img"> 
+		</div>
+        <p class="a-center">
+			<a href="https://t.me/kristinaslifeinmusic">
+				<img style="text-align:center; 
+				width: 50px; height: 50px" 
+				src="img/logo.png">
+			</a>
+		</p>
+    </body>
+
+    <script src="functions.js"> </script>
+    <script>
+			const buttons = document.querySelectorAll('div > button');
+
+            buttons.forEach(button =>
+                button.onmousedown = function(event) 
+                {
+                    let shiftX = event.clientX - button.getBoundingClientRect().left;
+                    let shiftY = event.clientY - button.getBoundingClientRect().top;
+
+                    button.style.position = 'absolute';
+                    button.style.zIndex = 1000;
+                    document.body.append(button);
+
+                    moveAt(event.pageX, event.pageY);
+
+                    function moveAt(pageX, pageY) {
+                        button.style.left = pageX - shiftX + 'px';
+                        button.style.top = pageY - shiftY + 'px';
+                    }
+
+                    function onMouseMove(event) {
+                    moveAt(event.pageX, event.pageY);
+                    }
+
+                    document.addEventListener('mousemove', onMouseMove);
+
+                    button.onmouseup = function() {
+                    document.removeEventListener('mousemove', onMouseMove);
+                    button.onmouseup = null;
+                    };
+                }
+            );
+		</script>
+</html>

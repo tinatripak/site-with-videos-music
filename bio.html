@@ -1,0 +1,129 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Bio|Life in music</title>
+		<meta charset="utf-8";name="Kristina Tripak">
+		<link rel="shortcut icon" href="img/romashka.png" type="image/png">
+        <link rel="stylesheet" href="styles.css">
+		<style>
+			@font-face { font-family: madelikesscript; src: url('madelikesscript.ttf'); } 
+			h2 {
+				font-family: madelikesscript;
+				color:#817358;
+			}
+			.text{
+				font-family: madelikesscript;
+				color:#817358;
+			}
+			img {
+				border-radius: 30px; 
+				text-align: center;
+				width: 30%;
+			}
+
+			.ml-img {
+				margin-left: 1%;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="a-center">
+			<h1>Biography</h1>
+        </div>
+		<div>
+
+		<a class="btn" data-toggle-id = "1" href="home_page.html">HOME</a>
+		<a class="btn" data-toggle-id = "1" href="music.html">MUSIC</a>
+		<a class="btn" data-toggle-id = "1" href="videos.html">VIDEOS</a>
+		
+		<h2 class = "a-center">Kodaline</h2>
+        <div class = "text">
+			<b><i>Kodaline are an Irish rock band.</i> </b>Originally known as 21 Demands, 
+			the band adopted their current name in 2012 to coincide with the changing of their music. <br>
+			The group comprises Steve Garrigan, Mark Prendergast, Vincent May and Jason Boland.
+			<br>
+			Garrigan and Prendergast grew up in Swords, Dublin, and have known each other since childhood. 
+			May and Garrigan attended Colaiste Choilm CBS, Swords, <br>where they participated in battles 
+			of the bands. Boland joined the group in 2012. They have released four albums: <br>
+		</div>
+		
+		<div class="format">
+			<img src="img/kodaline1.png" class="ml-img"> 
+			<img src="img/kodaline2.png" class="ml-img"> 
+			<img src="img/kodaline3.png" class="ml-img"> 
+		</div>
+		
+		<h2 class = "a-center">Lana Del Ray</h2>
+		<div class = "text">
+			<b><i>Elizabeth Woolridge Grant</i> (born June 21, 1985), known professionally as Lana Del Rey, 
+			is an American singer-songwriter. </b>Her music is noted for its stylized, <br> cinematic quality 
+			and exploration of themes of sadness, tragic romance, glamor, and melancholia, containing 
+			many references to pop culture, particularly 1950s and 1960s Americana.<br>
+		</div>
+		
+		<div class="format">
+			<img src="img/lana1.png" class="ml-img"> 
+			<img src="img/lana2.png" class="ml-img"> 
+			<img src="img/lana3.png" class="ml-img"> 
+		</div>
+
+		<h2 class = "a-center">Avicii</h2>
+		<div class = "text">
+			<b><i>Tim Bergling</i> (8 September 1989 – 20 April 2018), known by his stage name Avicii, 
+			was a Swedish DJ, remixer, record producer, musician, and songwriter.</b><br>
+	
+			At the age of 16, Bergling began posting his remixes on electronic music forums, 
+			which led to his first record deal.He rose to prominence in 2011 with his single <b>"Levels"</b>. <br>
+			His debut studio album, <b>True (2013)</b>, blended electronic <span> music with elements </span>of multiple 
+			genres and received generally positive reviews. It peaked in the <i>top ten </i>in more <br>than 
+			fifteen countries and topped international charts; the lead single, <b>"Wake Me Up</b>, topped 
+			most music markets in Europe and reached number four in the United States.
+		</div>
+		
+		<div class="format">
+			<img src="img/avicii1.png" class="ml-img"> 
+			<img src="img/avicii2.png" class="ml-img"> 
+			<img src="img/avicii3.png" class="ml-img"> 
+		</div>
+		
+		<h2 class = "a-center">Billie Eilish</h2>
+		<div class = "text">
+			<b>Billie Eilish Pirate Baird O'Connell (born December 18, 2001) is an American singer and 
+			songwriter. </b>She first gained public attention in 2015 with her debut single <b>"Ocean Eyes"</b>,<br>
+			which was subsequently released by Darkroom, a subsidiary of Interscope Records. 
+			The song was written and produced by her brother, Finneas O'Connell, with whom she 
+			frequently collaborates <br>on music and in live shows. 
+			Her debut extended play, <b>Don't Smile at Me (2017)</b>, was commercially successful and 
+			charted within the top 15 in the US, UK, Canada, and Australia.
+		</div>
+		
+		<div class="format">
+			<img src="img/billie1.png" class="ml-img"> 
+			<img src="img/billie2.png" class="ml-img"> 
+			<img src="img/billie3.png" class="ml-img"> 
+		</div>
+			
+
+
+		<p class="a-center">
+			<a href="https://t.me/kristinaslifeinmusic">
+				<img style="text-align:center; 
+				width: 50px; height: 50px" 
+				src="img/logo.png">
+			</a>
+		</p>
+		<script>
+			document.addEventListener('mouseover', function(event) {
+				let id = event.target.dataset.toggleId;
+				if (!id) return;
+				event.relatedTarget.style.color = "yellow";
+			});
+
+			document.addEventListener('mouseout', function(event) {
+				let id = event.target.dataset.toggleId;
+				if (!id) return
+				event.target.style.backgroundColor= '#' + Math.floor(Math.random()*16777215).toString(16); 
+			});
+        </script>
+	</body>
+</html>

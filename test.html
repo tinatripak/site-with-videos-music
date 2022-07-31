@@ -1,0 +1,179 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <script >
+            function testAlert()  
+            {
+                alert("Error! Sorry  we can't send it :(");
+            }
+            function testConfirm()  
+            {
+                var result = confirm("Do you want to see the next page?");
+                if(result)  {
+                    alert("OK!");
+                    window.location.href = 'bio.html';
+                } else {
+                    alert("Bye!");
+                }
+            }
+            function testPrompt()  
+            {
+                var result = prompt('Write your favorite song', '');
+                if(result != null)  
+                {
+                    alert('Your favorite song is ' + result);
+                }
+            }
+        </script>
+
+        <title>Home|Life in music</title>
+        <meta charset="utf-8";name="Kristina Tripak">
+        <link rel="shortcut icon" href="img/romashka.png" type="image/png">
+        <link rel="stylesheet" href="styles.css">
+        <style>
+        
+            @font-face { font-family: madelikesscript; src: url('madelikesscript.ttf'); }  
+            p {
+                font-family: madelikesscript;
+                color:#817358;
+            }
+            button{
+                font-family: madelikesscript;
+                color:#817358;
+                height:40px;
+                width:100px;
+                font-size:larger;
+            }
+            img {
+				border-radius: 30px; 
+				text-align: center;
+				width: 8%;
+			}
+
+			.ml-img {
+				margin-left: 1%;
+			}
+            .channel{
+                font-family: madelikesscript;
+				font-size: 26px;
+            }
+            b{
+                font-family: madelikesscript;
+                color:#706b5f;
+				font-size: 26px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="a-center">
+			<h1>Life in music</h1>
+        </div>
+		<div>
+            <a class="btn" href="home_page.html">HOME</a>
+			<a class="btn" href="bio.html">BIO</a>
+			<a class="btn" href="music.html">MUSIC</a>
+			<a class="btn" href="videos.html">VIDEOS</a>
+        </div>
+        <div id = "text">
+            <p>Let's talk about <i>the top songs of 2021</i>. If you want to get them, click on the button below (alert)</p>
+        </div>
+        <div class="format">
+            <button onclick="testAlert()">
+                Click me!
+            </button>
+        </div>
+        <div id = "text">
+            <p>Click on the button below if you want to be redirected to the page of bio(confirm)</p>
+        </div>
+        <div class="format">
+            <button onclick="testConfirm()">
+                Click me!
+            </button>
+        </div>
+        <div id = "text">
+            <p>Type you <i>favorite song</i> (prompt)</p>
+        </div>
+        <div class="format">
+            <button onclick="testPrompt()">
+                Click me!
+            </button>
+        </div>
+        <div id = "text">
+            <p>Click and type the names of singers if you want to see their songs</p>
+        </div>
+        <div class="format">
+            <button onclick="dialogWithUser()">
+                Click me!
+            </button>
+        </div>
+        
+        <div id = "forTextContent">
+            <p>Thank you for watching me</p>
+        </div>
+        
+        <div class="format">
+			<img src="img/note.png" class="ml-img" style="width: 6%"> 
+			<img src="img/romashka.png" class="ml-img"> 
+			<img src="img/note.png" class="ml-img" style="width: 6%"> 
+		</div>
+        <p class="a-center">
+			<a href="https://t.me/kristinaslifeinmusic">
+				<img style="text-align:center; 
+				width: 50px; height: 50px" 
+				src="img/logo.png">
+			</a>
+		</p>
+    </body>
+    
+    <script>
+        let elem = document.getElementById('text');
+        elem.style.fontSize = "30px";
+
+        var x = document.querySelectorAll("i");
+        var i;
+        for (i = 0; i < x.length; i++) 
+        {
+            x[i].style.backgroundColor = "#e9967a";
+        }
+        
+        alert( document.body.innerHTML );
+
+        // document.body.innerHTML = 'Music can raise someone’s mood, get them excited, or make them calm and relaxed. Music also - and this is important - allows us to feel nearly or possibly all emotions that we experience in our lives. '; 
+
+        alert(elem.outerHTML); 
+
+        alert(forTextContent.textContent);
+
+
+        let buttonValue = document.querySelector("button").childNodes[0].nodeValue
+        result =  document.getElementById("text"); 
+        result.innerHTML = buttonValue;
+    </script>
+    <script>
+        document.write('<b>Visit our other pages</b><br>');
+
+        let first = document.createElement("a");
+        first.className = "channel";
+        first.innerHTML = "Посилання на ваш улюбленний тг канал";
+        first.href = "https://t.me/kristinaslifeinmusic";
+        document.body.append(first);
+
+        let second = document.createTextNode('Music is one of the most important and powerful things in my life. My life without melodies and harmonies would be completely empty.');
+
+        p1 = document.getElementById("forTextContent");
+        p1.appendChild(second)
+
+        let third = document.createTextNode("See you later");
+        let fourth = document.createTextNode("You can see bio, music,video on other pages");
+        document.getElementById("forTextContent").after(third);
+        document.getElementById("forTextContent").before(fourth)
+
+        setTimeout(() => first.replaceWith(second), 10000);
+        setTimeout(() => second.remove(), 15000);
+
+    </script>
+    <script src="dialogWithUser.js"></script>
+    <script src="outputInfo.js"></script>
+    <script src="compareTwoLines.js"></script>
+    <script src="backImage.js"></script>
+</html>

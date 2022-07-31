@@ -1,0 +1,118 @@
+body {
+    font-family: 'Book Antiqua', sans-serif;
+	background-image: url("img/homeimage.jpg");
+    background-size: 100%;
+	color: #585743;
+	font-size:18px;
+	background-attachment:fixed;
+	background-position: 0px 0px,
+	center;
+	
+}
+
+P { 
+    text-align: justify;
+}
+
+h1 { 
+    color:#fcfbef;
+}
+
+a:link {
+    color:#fcfbef;
+}
+
+a:visited {
+	color: #fcfbef;
+}
+
+a:active {
+	color: #fcfbef;
+} 
+
+.a-center {
+    text-align: center;
+}
+
+#text
+{
+	font-style: italic;
+}
+
+#forTextContent
+{
+	
+	font-family: madelikesscript;
+	color:#817358;
+}
+
+.btn {
+	display: inline-block;	
+	box-sizing: border-box;
+	padding: 0 25px;
+	margin: 0 15px 15px 0;
+	outline: none;
+	border-radius: 50px;
+	height: 46px;
+	line-height: 46px;
+	font-size: 14px;
+	font-weight: 600;
+	text-decoration: none;
+	color: rgb(226, 224, 224);
+	background-color: rgb(226, 224, 224);
+	box-shadow: 0 4px 6px rgb(65 132 144 / 10%), 0 1px 3px rgb(0 0 0 / 8%);
+	cursor: pointer;
+	user-select: none;
+	appearance: none;
+	touch-action: manipulation;  
+	vertical-align: top;
+}
+.btn:focus-visible {
+	border: 1px solid #4c51f9;
+	outline: none;
+}
+.btn:hover {
+	transition: all 0.2s;
+	box-shadow: 0 7px 14px rgb(65 132 144 / 10%), 0 3px 6px rgb(0 0 0 / 8%);
+}
+.btn:active {
+	background-color: #808080;
+}
+.btn:disabled {
+	background-color: #eee;
+	border-color: #eee;
+	color: #fcfbef;
+	cursor: not-allowed;
+}
+
+.round_agle{
+	border-radius: 10px;
+}
+
+.img-class:hover {
+	transform: scale(1.4);
+}
+
+
+img {
+	border-radius: 30px; 
+	text-align: center;
+	width: 70%; 
+
+}
+
+.format{
+	display:flex;
+	align-items: center;
+	justify-content: center;
+	padding: 10px;
+	text-align: center;
+}
+
+.ml-img {
+	margin-left: -7%;
+}
+
+#move {
+	color: #808080;
+}
